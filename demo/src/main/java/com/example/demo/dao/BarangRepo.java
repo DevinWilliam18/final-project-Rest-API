@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BarangRepo extends JpaRepository<Barang, Integer>{
 
-    // List<Barang> findByIduser(int idUser);
+    Barang findByIdBarang(int idBarang);
     
 }

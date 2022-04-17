@@ -23,7 +23,7 @@ public class RestUser {
         this.usrService = usrService;
     }
 
-    @GetMapping("/barang/{userId}")
+    @GetMapping("/barang/user/{userId}")
     public List<User> getAllByIdUser(@PathVariable int userId){
 
         return usrService.getAllById(userId);

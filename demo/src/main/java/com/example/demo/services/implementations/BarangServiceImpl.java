@@ -26,12 +26,6 @@ public class BarangServiceImpl implements BarangService{
         return brgRepo.findAll();
     }
 
-    // @Override
-    // public List<Barang> findById(int id) {
-    //     List<Barang> findBarang = brgRepo.findByIduser(id);
-
-    //     return findBarang;
-    // }
 
 
     @Override
@@ -39,6 +33,19 @@ public class BarangServiceImpl implements BarangService{
 
         // TODO Auto-generated method stub
         brgRepo.save(brg);
+    }
+
+    @Override
+    public Barang findById(int id) {
+        
+        return brgRepo.findByIdBarang(id);
+    }
+
+    @Override
+    public void deleteBrg(int idBarang) {
+        
+        brgRepo.deleteById(idBarang);
+        
     }
     
 }

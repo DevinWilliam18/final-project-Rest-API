@@ -20,7 +20,7 @@ public class Barang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idbarang")
-    private int Id;
+    private int idBarang;
     
     @Column(name="namabarang")
     private String namaBarang;
@@ -37,11 +37,11 @@ public class Barang {
     List<DetailTransaksi> detailTransaksi = new ArrayList<>();
 
     public int getId() {
-        return Id;
+        return idBarang;
     }
 
     public void setId(int id) {
-        Id = id;
+        idBarang = id;
     }
 
     public String getNamaBarang() {
