@@ -52,18 +52,20 @@ public class RestBarang {
     }
     
 
-    @PostMapping("/barang")
-    public Barang saveBarang(@RequestBody Barang brg){
+    // @PostMapping("/barang")
+    // public Barang saveBarang(@RequestBody Barang brg){
         
-        //this is to force a new item instead of update
-        brg.setId(0);
-        brgService.saveBrg(brg);
+    //     //this is to force a new item instead of update
+    //     brg.setId(0);
+    //     brgService.saveBrg(brg);
 
-        return brg;
-    }
+    //     return brg;
+    // }
 
     @PutMapping("/barang")
     public void updateBarang(@RequestBody Barang brg) {
+        // Barang temp = brgService.findById(idBarang);
+        
         brgService.saveBrg(brg);
     }
 
