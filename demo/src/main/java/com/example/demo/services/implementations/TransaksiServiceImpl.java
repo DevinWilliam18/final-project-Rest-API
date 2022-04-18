@@ -26,9 +26,9 @@ public class TransaksiServiceImpl implements TransaksiService{
 
 
     @Override
-    public int getLatestId() {
+    public Transaksi getLatestId() {
         
-        return Integer.valueOf(transaksiRepo.findTopByOrderByIdTransaksiDesc());
+        return transaksiRepo.findTopByOrderByIdTransaksiDesc();
     }
 
     @Override

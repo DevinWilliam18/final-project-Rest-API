@@ -20,7 +20,7 @@ public class Barang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idbarang")
-    private int idBarang;
+    private Integer idBarang;
     
     @Column(name="namabarang")
     private String namaBarang;
@@ -36,11 +36,11 @@ public class Barang {
     @JoinColumn(name = "idbarang", referencedColumnName = "idbarang")
     List<DetailTransaksi> detailTransaksi = new ArrayList<>();
 
-    public int getId() {
+    public Integer getId() {
         return idBarang;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         idBarang = id;
     }
 

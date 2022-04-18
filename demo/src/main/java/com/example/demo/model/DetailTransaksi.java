@@ -20,7 +20,7 @@ public class DetailTransaksi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detail_transaksi")
-    private int idDetailTransaksi;
+    private Integer idDetailTransaksi;
 
     @Column(name = "jumlah_barang")
     private int jumlahBarang;
@@ -28,11 +28,11 @@ public class DetailTransaksi {
     @Column(name = "tot_harga")
     private int totalHarga;
 
-    public int getIdDetailTransaksi() {
+    public Integer getIdDetailTransaksi() {
         return idDetailTransaksi;
     }
 
-    public void setIdDetailTransaksi(int idDetailTransaksi) {
+    public void setIdDetailTransaksi(Integer idDetailTransaksi) {
         this.idDetailTransaksi = idDetailTransaksi;
     }
 

@@ -19,7 +19,6 @@ public class RestDetailTransaksi {
     @Autowired
     private DetailTransaksiService detailService;
 
- 
 
     @GetMapping("/process/{idTransaksi}/detail/{idDetail}")
     public DetailTransaksi getDetail(@PathVariable int idTransaksi, @PathVariable int idDetail) {
@@ -37,7 +36,5 @@ public class RestDetailTransaksi {
     public void deleteMapping(@PathVariable int idTransaksi, @PathVariable int idDetail) {
         detailService.deleteDetail(idDetail);
     }
-
-
 
 }

@@ -8,5 +8,5 @@ public interface DetailTransaksiService {
     void saveDetail(DetailTransaksi detail);
     void deleteDetail(int id);
     DetailTransaksi getDataByIdDetail(int trans);
-    int getLatestDetailId();
+    DetailTransaksi getLatestDetailId();
 }

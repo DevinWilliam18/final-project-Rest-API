@@ -22,7 +22,7 @@ public class Transaksi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_transaksi")
-    private int idTransaksi;
+    private Integer idTransaksi;
 
 
     @Column(name = "tanggal_transaksi")
@@ -35,11 +35,11 @@ public class Transaksi {
     @JoinColumn(name = "id_transaksi", referencedColumnName = "id_transaksi")
     List<DetailTransaksi> detailTransaksi = new ArrayList<>();
 
-    public int getIdTransaksi() {
+    public Integer getIdTransaksi() {
         return idTransaksi;
     }
 
-    public void setIdTransaksi(int idTransaksi) {
+    public void setIdTransaksi(Integer idTransaksi) {
         this.idTransaksi = idTransaksi;
     }
 

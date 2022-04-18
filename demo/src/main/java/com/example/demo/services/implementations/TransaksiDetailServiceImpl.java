@@ -49,7 +49,7 @@ public class TransaksiDetailServiceImpl implements DetailTransaksiService{
     }
 
     @Override
-    public int getLatestDetailId() {
+    public DetailTransaksi getLatestDetailId() {
         // TODO Auto-generated method stub
         return detailRepo.findTopByOrderByIdDetailTransaksiDesc();
     }

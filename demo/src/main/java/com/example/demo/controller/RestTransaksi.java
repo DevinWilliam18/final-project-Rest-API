@@ -37,7 +37,7 @@ public class RestTransaksi {
 
 
     @GetMapping("/process")
-    public int getTheLatestId(){
+    public Transaksi getTheLatestId(){
         return tService.getLatestId();
     }
 
@@ -68,11 +68,11 @@ public class RestTransaksi {
 
         tService.updateTrans(temp);
 
-        int detailTemp = detailService.getLatestDetailId();
+        DetailTransaksi detailTemp = detailService.getLatestDetailId();
 
         Barang brgTemp = brgService.findById(idBarang);
         
-        detailTransaksi.setIdDetailTransaksi(detailTemp);
+        detailTransaksi.setIdDetailTransaksi(detailTemp.getIdDetailTransaksi());
         brgTemp.getDetailTransaksi().add(detailTransaksi);
         brgService.saveBrg(brgTemp);
     }
