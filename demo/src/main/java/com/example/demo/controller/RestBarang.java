@@ -19,13 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RestBarang {
     
+    @Autowired
     private BarangService brgService;
     // private UserService usrSevice;
 
-    @Autowired
-    public RestBarang(BarangService brgService) {
-        this.brgService = brgService;
-    }
+   
     
     // public RestBarang(UserService usrSevice) {
     //     this.usrSevice = usrSevice;

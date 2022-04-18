@@ -16,13 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RestDetailTransaksi {
     
+    @Autowired
     private DetailTransaksiService detailService;
 
-    
-    @Autowired
-    public RestDetailTransaksi(DetailTransaksiService detailService) {
-        this.detailService = detailService;
-    }
+ 
 
     @GetMapping("/process/{idTransaksi}/detail/{idDetail}")
     public DetailTransaksi getDetail(@PathVariable int idTransaksi, @PathVariable int idDetail) {

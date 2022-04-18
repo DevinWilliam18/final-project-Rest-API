@@ -6,6 +6,7 @@ import com.example.demo.model.Barang;
 import com.example.demo.model.DetailTransaksi;
 import com.example.demo.model.Transaksi;
 import com.example.demo.services.BarangService;
+import com.example.demo.services.DetailTransaksiService;
 import com.example.demo.services.TransaksiService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,22 +23,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RestTransaksi {
     
+    @Autowired
     private TransaksiService tService;
 
-    // private BarangService brgService;
-
-    
     @Autowired
-    public RestTransaksi(TransaksiService tService) {
-        this.tService = tService;
-    }
+    private BarangService brgService;
 
-    
 
-    // @Autowired
-    // public RestTransaksi(BarangService brgService) {
-    //     this.brgService = brgService;
-    // }
+    @Autowired
+    private DetailTransaksiService detailService;
 
 
 
@@ -68,12 +62,19 @@ public class RestTransaksi {
         detailTransaksi.setIdDetailTransaksi(0);
         Transaksi temp = tService.getDataById(idTransaksi);
 
-        // Barang brgTemp = brgService.findById(idBarang);
-
+        
         temp.getDetailTransaksi().add(detailTransaksi);
-        // brgTemp.getDetailTransaksi().add(detailTransaksi);
+        
 
         tService.updateTrans(temp);
+
+        int detailTemp = detailService.getLatestDetailId();
+
+        Barang brgTemp = brgService.findById(idBarang);
+        
+        detailTransaksi.setIdDetailTransaksi(detailTemp);
+        brgTemp.getDetailTransaksi().add(detailTransaksi);
+        brgService.saveBrg(brgTemp);
     }
 
     @PutMapping("/process/{idTransaksi}")

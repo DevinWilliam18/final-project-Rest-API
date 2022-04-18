@@ -19,13 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class RestUser {
 
+    @Autowired
     private UserService usrService;
 
-    @Autowired
-    public RestUser(UserService usrService) {
-        this.usrService = usrService;
-    }
-
+    
     @GetMapping("/barang/user/{userId}")
     public List<User> getAllByIdUser(@PathVariable int userId){
 
