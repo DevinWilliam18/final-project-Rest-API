@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TransaksiRepo extends JpaRepository<Transaksi, Integer>{
     
-    public Transaksi findByIdTransaksi(int idTransaksi);
+    // public Transaksi findByIdTransaksi(int idTransaksi);
     public int findTopByOrderByIdTransaksiDesc();
 
 }

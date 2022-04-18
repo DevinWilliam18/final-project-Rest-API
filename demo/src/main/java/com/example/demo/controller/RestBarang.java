@@ -26,17 +26,10 @@ public class RestBarang {
     public RestBarang(BarangService brgService) {
         this.brgService = brgService;
     }
-
     
-
-
-
     // public RestBarang(UserService usrSevice) {
     //     this.usrSevice = usrSevice;
     // }
-
-
-
 
 
     @GetMapping("/barang")
@@ -65,7 +58,6 @@ public class RestBarang {
     @PutMapping("/barang")
     public void updateBarang(@RequestBody Barang brg) {
         // Barang temp = brgService.findById(idBarang);
-        
         brgService.saveBrg(brg);
     }
 
