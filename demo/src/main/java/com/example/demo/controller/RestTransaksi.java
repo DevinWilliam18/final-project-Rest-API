@@ -48,7 +48,8 @@ public class RestTransaksi {
 
 
     @PostMapping("/process")
-    public void saveANewTransaksi(@RequestBody Transaksi trans) {
+    public void saveANewTransaksi() {
+        Transaksi trans = new Transaksi();
         trans.setIdTransaksi(0);
         trans.setTotalPrice(0);
         trans.setTransactionDate(LocalDate.now());
